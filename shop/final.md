@@ -1,1 +1,0 @@
-Para juntar el proyecto
