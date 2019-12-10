@@ -1,0 +1,87 @@
+*{
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+body{
+    background: gray;
+    
+}
+
+#contenedor{
+    width: 45%;
+    background: #fff;
+    margin-top: 40px;
+    margin: 5px;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+#caja-chat{
+    
+    width: 90%;
+    height: 400px;
+}
+
+#datos-chat{
+    width: 100%;
+    padding: 3px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid silver;
+    font-weight: bold;
+    font-family: 'Inconsolata', monospace;
+}
+
+input[type='text']{
+    width: 100%;
+    height: 40px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    
+}
+
+input[type='submit']{
+    width: 100%;
+    height: 40px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    
+    cursor: pointer;
+}
+
+textarea{
+    width: 100%;
+    height: 40px;
+    border: 1px solid gray;
+    border-radius: 5px;
+   
+}
+
+input, textarea{
+    margin-bottom: 3px;
+}
+.collapsible {
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.active, .collapsible:hover {
+  background-color: #555;
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}
+
+ 
