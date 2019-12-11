@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cookie</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body onload="loadCookie()">
+    <div>
+       <button type="button" id="bby">Negro con Letras Amarillas</button>
+       <button type="button" id="bnr">Normal</button>
+       <button type="button" id="verTodas">Ver todas las cookies</button>
+    </div>
+    <div>
+        <p id="ho">
+            (os) It's Emmett, Clara. (Clara gets up from her desk and opens the door. She smiles at Doc.) Oh, Emmett, won't you come in? No...I better not. I... What's wrong?
+        </p>
+    </div>
+    <script>
+        
+        document.getElementById("bby").addEventListener("click",by);
+        document.getElementById("bnr").addEventListener("click",nor);
+        document.getElementById("verTodas").addEventListener("click",verCookies);
+        
+        function verCookies(){
+            alert("Cookies actuales:\n"+document.cookie);
+        }
+
+        function by(){        
+            var estilo = "by";    
+            setCookie(estilo);
+            document.getElementById("ho").className = estilo;
+        }
+
+        function nor(){
+            var estilo = "normal";    
+            setCookie(estilo);
+            document.getElementById("ho").className = estilo;
+        }
+
+        function setCookie(estilo) {
+            var cookie = {};
+            cookie.estilo = estilo;            
+            var jsonString = JSON.stringify(cookie);
+
+            var d = new Date();
+            d.setTime(d.getTime() + (1 * 24 * 60 * 60 * 1000));
+            var expires = "expires="+d.toUTCString();
+            document.cookie = "accessibilidadCookie=" + jsonString + ";" + expires + ";path=/";
+        }
+
+        function getCookie() {            
+            var cookieString = getCookieValue("accessibilidadCookie");            
+            if(cookieString == "") return "normal";
+            
+            var cookie = JSON.parse(cookieString);
+            console.log(cookie);
+            return cookie.estilo;
+        }
+       
+        function getCookieValue(cname) {
+            var name = cname + "=";
+            var decodedCookie = decodeURIComponent(document.cookie);
+            var ca = decodedCookie.split(';');
+            for(var i = 0; i <ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+
+        function loadCookie() {            
+            var estilo = getCookie();     
+            document.getElementById("ho").className = estilo;       
+        }
+    </script>
+</body>
+</html>
