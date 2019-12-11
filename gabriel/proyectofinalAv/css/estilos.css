@@ -1,0 +1,23 @@
+body {
+    background: url(../img/bgi.jpg);
+}
+
+
+
+h2.lecture-title {
+    margin: 30px 0;
+    font-size:3rem;
+    text-align: center;
+    font-family: 'Dosis', sans-serif;
+    color: whitesmoke;
+}
+
+table {
+    text-align: center;
+    border-color: silver;
+    padding: 2%;
+}
+
+td {
+    font-weight: bold;
+}
